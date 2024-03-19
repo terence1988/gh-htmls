@@ -1,5 +1,16 @@
 <html>
 	<head>
+		<!-- Form: WriteKey -->
+		<form method="get">
+			<input type="text" name="writeKey" placeholder="Writekey" />
+			<button>Load</button>
+		</form>
+		<script>
+			const { searchParams } = new URL(document.location);
+			const writeKey = searchParams.get("writeKey");
+			document.querySelector("input").value = writeKey;
+		</script>
+
 		<!-- Form: Clear OneTrust Cookie -->
 		<button id="clear-ot-cookies">Clear OneTrust Cookies & Reload</button>
 		<script>
@@ -87,13 +98,13 @@
 							t.async = !0;
 							t.setAttribute("data-global-segment-analytics-key", i);
 							t.src = "https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";
-							console.log(t.src)
 							var r = document.getElementsByTagName("script")[0];
+							console.log(r)
 							r.parentNode.insertBefore(t, r);
 							analytics._loadOptions = n;
 						};
 						analytics._writeKey = "AJWHcvm8CziOYja33vj0maZ1sQ1QxBnt";
-						analytics.SNIPPET_VERSION = "5.2.0";
+						analytics.SNIPPET_VERSION = "5.2.1";
 						withOneTrust(analytics).load("AJWHcvm8CziOYja33vj0maZ1sQ1QxBnt");
 						analytics.page();
 					}
